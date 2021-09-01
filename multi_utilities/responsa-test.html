@@ -13,10 +13,13 @@
 
       const urlParams = new URLSearchParams(window.location.search);
       const phoneParam = urlParams.get('phone');
+      const originParam = urlParams.get('origin');
 
       params = {
+        origin: originParam,
         meta: {
-          phone: phoneParam
+          phone: phoneParam,
+          origin: originParam
         }
       }
       w = 'chatbot/6110e5e4e64cfa52cda9e0ca';
