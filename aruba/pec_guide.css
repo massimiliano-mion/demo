@@ -18,6 +18,10 @@ h1 {
   font-weight: normal;
 }
 
+#otherservice {
+  padding: 15px;
+}
+
 #otherservice .panel .panel-heading a.collapsed:before,
 #otherservice .panel .panel-heading a:before,
 #otherservice a,
