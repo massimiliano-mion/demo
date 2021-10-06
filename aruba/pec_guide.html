@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="pec_guide.css">
     <title>Pec Aruba</title>
   </head>
-  <body>
+  <body onload="resize()">
     <div id="otherservice">
       <h1>Come resettare la password della casella PEC</h1>
       
@@ -49,6 +49,11 @@
         </div>
         </li>
       </ol>
-      </div>
+    </div>
+    <script>
+    var resize = function(){
+      parent.postMessage({ resize: { width: 900, height: 900 } }, '*');
+    };
+  </script>
   </body>
 </html>
