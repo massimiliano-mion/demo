@@ -52,6 +52,7 @@
     </div>
     <script>
     var resize = function(){
+      console.log("Send resizing command to parent");
       parent.postMessage({ resize: { width: 900, height: 900 } }, '*');
     };
   </script>
