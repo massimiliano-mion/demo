@@ -42,6 +42,7 @@
             border-radius: 16px;
             box-shadow: rgb(0 0 0 / 25%) 0px 6px 40px;
             background: #FFF;
+            overflow: hidden;
         }
         
         #res_chatbot_REPLACE_WITH_CHATBOTID {
@@ -72,7 +73,8 @@
                         params = {
                             chatbot_position: 'relative',
                             auto_engage: true,
-                            iframe_height: 600
+                            iframe_height: 600,
+                            iframe_width: 100%
                         }
                     }
                     q[t] = q[t] || {}, q[t]['618d46fde64cfa185cf0a9aa'] = params;
