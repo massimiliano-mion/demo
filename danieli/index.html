@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Demo Danieli</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            display: block;
+            height: 300px;
+            width: 100%;
+            background-color: #004a93;
+        }
+        
+        nav {
+            display: block;
+            padding: 48px;
+            width: calc(100% - 96px);
+        }
+        
+        nav .logo {
+            float: left;
+        }
+        
+        nav .right-section {
+            float: right;
+        }
+        
+        #responsa_chatbot_container {
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 600px;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            border-radius: 16px;
+            box-shadow: rgb(0 0 0 / 25%) 0px 6px 40px;
+            background: #FFF;
+        }
+        
+        #res_chatbot_REPLACE_WITH_CHATBOTID {
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./img/responsa_logo.png" />
+            </div>
+
+            <div class="right-section">
+                <img src="./img/avatar.png" />
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="responsa_chatbot_container">
+            <script name="responsa-js" class="responsa-js">
+                (function(q, u, e, s, t, i, o, n) {
+                    params = {}
+
+                    if (!('ontouchstart' in window) && !(navigator.maxTouchPoints > 0) || ((navigator.maxTouchPoints > 0 || 'ontouchstart' in window || 'onmsgesturechange' in window) && window.innerWidth > 1024)) {
+                        params = {
+                            chatbot_position: 'relative',
+                            auto_engage: true,
+                            iframe_height: 600
+                        }
+                    }
+                    q[t] = q[t] || {}, q[t]['618d46fde64cfa185cf0a9aa'] = params;
+                    o = u.getElementsByTagName(e)[0];
+                    n = u.createElement(s), n.async = 1, n.defer = 1, n.src = i;
+                    o.appendChild(n)
+                })(window, document, "head", "script", "res_pars", "https://chatbots-staging.goresponsa.com/chatbot/618d46fde64cfa185cf0a9aa.js");
+            </script>
+        </div>
+    </main>
+</body>
+
+</html>
