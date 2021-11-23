@@ -43,10 +43,9 @@
             box-shadow: rgb(0 0 0 / 25%) 0px 6px 40px;
             background: #FFF;
             overflow: hidden;
-        }
-        
-        #res_chatbot_REPLACE_WITH_CHATBOTID {
-            box-shadow: none !important;
+            border: 0px;
+            margin: 0 auto;
+            margin-top: -150px;
         }
     </style>
 </head>
@@ -64,25 +63,7 @@
         </nav>
     </header>
     <main>
-        <div id="responsa_chatbot_container">
-            <script name="responsa-js" class="responsa-js">
-                (function(q, u, e, s, t, i, o, n) {
-                    params = {}
-
-                    if (!('ontouchstart' in window) && !(navigator.maxTouchPoints > 0) || ((navigator.maxTouchPoints > 0 || 'ontouchstart' in window || 'onmsgesturechange' in window) && window.innerWidth > 1024)) {
-                        params = {
-                            chatbot_position: 'relative',
-                            auto_engage: true,
-                            iframe_height: 600
-                        }
-                    }
-                    q[t] = q[t] || {}, q[t]['618d46fde64cfa185cf0a9aa'] = params;
-                    o = u.getElementsByTagName(e)[0];
-                    n = u.createElement(s), n.async = 1, n.defer = 1, n.src = i;
-                    o.appendChild(n)
-                })(window, document, "head", "script", "res_pars", "https://chatbots-staging.goresponsa.com/chatbot/618d46fde64cfa185cf0a9aa.js");
-            </script>
-        </div>
+        <iframe id="responsa_chatbot_container" src="https://responsa.github.io/demo/danieli/jira.html"></iframe>
     </main>
 </body>
 
