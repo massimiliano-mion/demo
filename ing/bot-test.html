@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script>
+    var LHC_API = LHC_API || {}
+    LHC_API.args = {
+      mode: 'widget',lang:'ita/',
+      lhc_base_url: '//helpchat.goresponsa.com/ing_test/index.php/',
+      wheight: 450,
+      wwidth: 350,
+      pheight: 520,
+      pwidth: 500,
+      leaveamessage: true,
+      department: [1],
+      theme: 1,
+      check_messages: true,
+    }
+      ; (function () {
+        var po = document.createElement('script')
+        po.type = 'text/javascript'
+        po.setAttribute('crossorigin', 'anonymous')
+        po.async = true
+        var date = new Date()
+        po.src =
+          '//helpchat.goresponsa.com/ing_test/design/defaulttheme/js/widgetv2/index.js?' +
+          ('' + date.getFullYear() + date.getMonth() + date.getDate())
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(po, s)
+      })()
+  </script>
+    </body>
+</html>
