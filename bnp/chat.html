@@ -1,0 +1,42 @@
+
+<html>
+
+<head></head>
+
+<body>
+
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var customerCode = urlParams.get('code');
+
+    if (typeof lhc_var === 'undefined') {
+      window.lhc_var = {};
+    };
+    lhc_var.customerCode = customerCode;
+    lhc_var.origin = 'ilmioleasing';
+
+    var LHC_API = LHC_API || {};
+    LHC_API.args = {
+      mode: 'widget',
+      lang:'ita/',
+      lhc_base_url: '//helpchat.goresponsa.com/bnp_dev/index.php/',
+      wheight: 450,
+      wwidth: 350,
+      pheight: 520,
+      pwidth: 500,
+      leaveamessage: true,
+      theme: 2,
+      check_messages: false
+    };
+    (function () {
+      var po = document.createElement('script');
+      po.type = 'text/javascript';
+      po.setAttribute('crossorigin', 'anonymous');
+      po.async = true;
+      var date = new Date(); po.src = '//helpchat.goresponsa.com/bnp_dev/design/defaulttheme/js/widgetv2/index.js?' + ("" + date.getFullYear() + date.getMonth() + date.getDate());
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+</body>
+
+</html>
