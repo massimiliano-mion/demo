@@ -1,12 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rob</title>
-<base href="https://www.w3schools.com/" target="_blank">
-</head>
-
-<body>
+<html>
+  <head></head>
+  <body>
     <script>
       var LHC_API = LHC_API || {}
       LHC_API.args = {
@@ -16,9 +10,9 @@
         wwidth: 350,
         pheight: 520,
         pwidth: 500,
-        leaveamessage: true,
-        theme: 2,
-        check_messages: true,
+        theme: 1,
+	leaveamessage: true,       
+	 check_messages: true,
       }
       ;(function () {
         var po = document.createElement('script')
@@ -27,12 +21,11 @@
         po.async = true
         var date = new Date()
         po.src =
-          '//helpchat.goresponsa.com/marsh/design/defaulttheme/js/widgetv2/index.js?' +
+          'https://helpchat.goresponsa.com/marsh_test/design/defaulttheme/js/widgetv2/index.js?' +
           ('' + date.getFullYear() + date.getMonth() + date.getDate())
         var s = document.getElementsByTagName('script')[0]
         s.parentNode.insertBefore(po, s)
       })()
-      setTimeout(function(){ window.$_LHC.eventListener.emitEvent('showWidget'); }, 7000);
     </script>
-</body>
+  </body>
 </html>
