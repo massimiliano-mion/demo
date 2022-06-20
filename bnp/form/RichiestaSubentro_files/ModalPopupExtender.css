@@ -1,0 +1,357 @@
+
+ .modalBackground
+{
+ 
+	 
+ 
+	_background-image:none;
+	 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='img/Shade.png');
+	 
+
+}
+ 
+ .ModalPopupBG
+{
+	background-color: #000;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	z-index: 2147483646 !important;
+}
+
+.popup_Container {
+	padding: 0px 0px 0px 0px;
+	margin:0px;
+	height:auto !important;
+    margin:0px;
+    padding:0px;
+    border:0px;
+    width:562px;
+    background-color:Transparent;
+}
+
+.popupConfirmation
+{
+	width: 562px;
+	min-height: 100px;
+	height:auto !important;
+	height:100px;
+	background-color:Transparent;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	z-index: 2147483647 !important;
+}
+
+.popup_Body
+{
+	padding:20px;
+	margin:0px;
+	font-family:Arial;
+	font-size:15px;
+	color:#000;
+	line-height:18px;
+	clear:both;
+	border-left:0px solid #ccc;
+	border-right:0px solid #ccc;
+	background-color:#fff;
+	border:0px solid #000;
+	min-height:100px;
+	height:auto !important;
+	height:100px;
+	width:522px;
+    overflow:auto;
+    scrollbar-base-color:#ccc;
+}
+
+
+.TitlebarLeft
+{
+height:47px; margin-top:0px !important;
+background-image:url(../img/box_header_comunicazione.gif);
+background-color:Transparent;
+position:relative;
+background-repeat:no-repeat;
+float:left;
+width:562px;
+border:0px solid red;
+cursor:move;
+}
+.TitlebarLeft p
+{
+padding-left: 55px;
+position:absolute; padding-top: 10px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif !important;
+color:#000 !important;
+font-size:22px !important;
+}
+
+.popup_Buttons
+{
+height:45px; cursor: pointer;
+background-image:url(../img/box_footer_comunicazione.gif);
+width:562px;
+border:0px solid red;
+padding:0px;
+margin:0px;
+    }
+
+.popup_Buttons p
+{
+padding-left: 55px;
+position:absolute; padding-top: 10px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif !important;
+color:#000 !important;
+font-size:22px !important;
+}
+
+.linkDocumenti
+{
+    color:#666666;
+    font-weight:bold;
+    background-color:inherit;
+    text-decoration:underline;
+    }
+
+.linkDocumenti:hover
+{
+    color:#000000;
+    text-decoration:none;
+    background-color:inherit;
+    }
+    
+    
+/* SwitchUser popupextender */
+
+.popup_Container_SwitchUser {
+	padding: 0px 0px 0px 0px;
+	margin:0px auto;
+	height:auto !important;
+    margin:0px auto;
+    padding:0px;
+    border:0px;
+    width:782px;
+    background-color:#fff;
+    border:0px solid blue;
+    text-align:left;
+}
+
+.popupConfirmation_SwitchUser
+{
+	width:840px;
+	height:auto !important;
+	background-color:Transparent;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	border:0px solid yellow;
+	text-align:center;
+	display:block;
+}
+
+.popup_Body_SwitchUser
+{
+	padding:20px 0px;
+	font-family:Arial;
+	font-size:15px;
+	color:#000;
+	line-height:18px;
+	clear:both;
+	border-left:0px solid #ccc;
+	border-right:0px solid #ccc;
+	background-color:#fff;
+	border:0px solid yellow;
+	min-height:100px;
+	height:auto !important;
+	height:100px;
+	width:100%;
+    overflow:auto;
+    text-align:center;
+}
+
+.TitlebarLeft_SwitchUser
+{
+height:47px; margin-top:0px !important;
+background-color:Transparent;
+background-image:url(../img/box_header_SwitchUser.gif);
+position:relative;
+background-repeat:repeat-x;
+width:100%;
+cursor:move;
+border:0px solid red;
+vertical-align:middle;
+color:#000 !important;
+display:block;
+}
+
+.TitlebarLeft_SwitchUser p
+{
+padding-left:50px;
+padding-top: 10px;
+font-weight:normal; font-size:22px !important;
+font-family: BNPP sans !important;
+/*script src="bnpf1.js"script;*/
+color:#000 !important;
+text-align:left;
+}
+
+.popup_Buttons_SwitchUser
+{
+	background-image:url(../img/box_header_SwitchUser.gif);
+	height:45px; cursor: pointer;
+	background-repeat:no-repeat;
+	width:100%;
+	border:0px solid red;
+	margin:0px;
+    }
+
+.popup_Buttons_SwitchUser p
+{
+	padding:10px;
+	padding-left:50px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif !important;
+	color:#000 !important;
+	font-size:22px !important;
+	border:0px solid red;
+	text-align:left;
+	}
+
+.linkDocumenti_SwitchUser
+{
+    color:#666666;
+    font-weight:bold;
+    background-color:inherit;
+    text-decoration:underline;
+    }
+
+.linkDocumenti_SwitchUser:hover
+{
+    color:#000000;
+    text-decoration:none;
+    background-color:inherit;
+    }
+    
+ /* Start CaricaAllegato */
+ 
+ .popupConfirmation_CaricaAllegato
+{
+	/*width:500px;
+	height:auto !important;
+	background-color:Transparent;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	border:0px solid yellow;
+	text-align:center;
+	display:block;*/
+	z-index: 2147483647 !important;
+}
+
+
+ 
+.popup_Body_CaricaAllegato
+{
+	padding:20px 0px;
+	font-family:Arial;
+	font-size:15px;
+	color:#000;
+	line-height:18px;
+	clear:both;
+	border-left:0px solid #ccc;
+	border-right:0px solid #ccc;
+	background-color:#fff;
+	border:0px solid yellow;
+	min-height:100px;
+	height:auto !important;
+	height:100px;
+	width:100%;
+    overflow:auto;
+    text-align:center;
+    
+}
+
+.popup_Buttons_CaricaAllegato_Input
+{
+	border: 1px solid #7F9DB9 !important;  
+}
+.popup_Buttons_CaricaAllegato
+{	 
+	background-image:url(../img/box_header_SwitchUser.gif);
+	height:45px; cursor: pointer;
+	background-repeat:no-repeat;
+	width:100%;
+	border:0px solid red;
+	margin:0px;
+    }
+
+.popup_Buttons_CaricaAllegato p
+{
+	padding-left:50px;
+	padding-top: 10px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif !important;
+	color:#000 !important;
+	font-size:22px !important;
+	text-align:left;
+	}
+	
+/* End CaricaAllegato */
+ .popup_Buttons2
+{
+height:35px; cursor: pointer;
+background-image:url(../img/box_footer_comunicazione2.gif);
+width:562px;
+border:0px solid red;
+padding:0px;
+margin:0px;
+    }
+
+.popup_Buttons2 p
+{
+padding-left: 20px;
+position:absolute; padding-top: 5px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif !important;
+color:#000 !important;
+font-size:22px !important;
+}
+
+.ButtonAlert
+{font-size:12pt !important;  
+}
+
+
+.TitlebarLeft2
+{
+height:39px; margin-top:0px !important;
+background-image:url(../img/box_header_comunicazione.gif);
+background-color:Transparent;
+position:relative;
+background-repeat:no-repeat;
+float:left;
+width:562px;
+border:0px solid red;
+cursor:move;
+
+
+
+
+
+
+ 
+
+
+
+
+}
+.TitlebarLeft2 p
+{
+padding-left: 45px;
+position:absolute; padding-top: 13px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif !important;
+color:#666 !important;
+font-size:18px !important; 
+}

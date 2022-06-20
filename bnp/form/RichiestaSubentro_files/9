@@ -1,0 +1,17 @@
+#lhc_status_container #status-icon {background-color:#FFFFFF!important;border-color:#01965e!important;}#lhc_status_container #status-icon.offline-status {background-color:#FFFFFF!important;}#lhc_status_container #status-icon.offline-status {border-color:#01965e!important;}#lhc_status_container #status-icon {color:#FFFFFF!important;}#lhc_status_container #status-icon.offline-status {color:#FFFFFF!important;}#lhc_status_container #status-icon:not(.close-status){background-image: url(//helpchat.goresponsa.com/bnp_dev/var/storagetheme/2021y/06/16/9/c2d14ef30033983209058749a254d0dd.png)!important;background-repeat: no-repeat!important;background-position: center center!important;}#lhc_status_container #status-icon:not(.close-status):before{content:''!important;}#lhc_status_container{ 
+    bottom:3px!important;
+    right:3px!important;
+    padding-left:3px!important;
+    padding-top:3px!important;
+}
+
+#lhc_status_container #status-icon{
+    box-shadow:none!important;
+    padding:5px!important;
+    min-height: 65px!important;
+    min-width: 65px!important;
+    max-height: 65px!important;
+    max-width: 65px!important;
+    width: 65px!important;
+    height: 65px!important;
+}

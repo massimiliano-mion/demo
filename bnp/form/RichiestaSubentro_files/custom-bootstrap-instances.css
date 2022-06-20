@@ -1,0 +1,187 @@
+﻿
+
+/****************************************************************************
+// Tables
+****************************************************************************/
+
+.MyCss {
+    /*display: none;*/
+    /*width: 0px !important;*/
+}
+
+/****************************************************************************
+ table Account
+*****************************************************************************/
+
+.table-Account {
+    font-family: 'BNPP Sans', sans-serif;
+}
+
+.table-Account tr {
+    height: 10px;
+}
+
+
+.table-Account .HeaderStyle {
+    font-weight: 400;
+    font-size: 16px;
+    color: #01965e;
+}
+
+    .table-Account .HeaderStyle a {
+        font-weight: 400;
+        font-size: 16px;
+        color: #01965e;
+    }
+
+.table-Account .ItemStyle {
+    color: #444;
+    width: unset;
+}
+
+.table-Account .ItemStyle .Flag {
+    display: block;
+    position: relative;
+    top: 4px;
+}
+    .table-Account .ItemOrganismoDescEstesa {
+    }
+
+    .table-Account .ItemRagioneSocialeStyle {
+        width: 60%;
+    }
+
+    .table-Account .HeaderIconStyle {
+        position: relative;
+        color: #01965e;
+        top: 9px;
+        left: 4px;
+    }
+
+.table-Account .ItemIconStyle {
+    position: relative;
+    color: #01965e;
+    top: 10px;
+}
+
+    .table-Account .PagerStyle {
+        color: #01965e;
+    }
+
+
+    /*.table-Account .FooterStyle {
+        font-weight: 400;
+        font-size: 16px;
+        color: #01965e;
+    }*/
+
+@media only screen and (max-width : 768px) {
+
+
+}
+
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+
+    .ItemOrganismoDescEstesa {
+        display: none;
+    }
+}
+
+/****************************************************************************
+ table Documenti
+*****************************************************************************/
+
+/*.table-Documenti {
+    font-family: 'BNPP Sans', sans-serif;
+}
+
+    .table-Documenti tr {
+        height: 10px;
+    }
+
+
+    .table-Documenti .HeaderStyle {
+        font-weight: 400;
+        font-size: 16px;
+        color: #01965e;
+    }
+
+        .table-Documenti .HeaderStyle a {
+            font-weight: 400;
+            font-size: 16px;
+            color: #01965e;
+        }
+
+    .table-Documenti .ItemStyle {
+        color: #444;
+        width: unset;
+    }
+
+        .table-Documenti .ItemStyle .Flag {
+            display: block;
+            position: relative;
+            top: 4px;
+        }
+
+    .table-Documenti .ItemOrganismoDescEstesa {
+    }
+
+    .table-Documenti .ItemRagioneSocialeStyle {
+        width: 60%;
+    }
+
+    .table-Documenti .HeaderIconStyle {
+        position: relative;
+        color: #01965e;
+        top: 9px;
+        left: 4px;
+    }
+
+    .table-Documenti .ItemIconStyle {
+        position: relative;
+        color: #01965e;
+        top: 10px;
+    }
+
+    .table-Documenti .PagerStyle {
+        color: #01965e;
+    }
+
+
+    .table-Documenti .FooterStyle {
+        font-weight: 400;
+        font-size: 16px;
+        color: #01965e;
+    }*/
+
+
+
+.bottom-item {
+
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 950px;
+    }
+} 
