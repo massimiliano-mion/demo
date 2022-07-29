@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      font-family: "Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #000000DE;
+      line-height: normal;
+      background-color: #fff;
+    }
+
+    .container{
+      margin: 0 auto;
+      overflow-y: scroll;
+      height: 100vh;
+      padding: 0 24px;
+    }
+
+    .header{
+      margin-top: 64px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: auto;
+      align-items: center;
+    }
+
+    .header-image{
+      width: 43px;
+      height: 43px;
+      display: block;
+      background: #eee;
+      display: inline-block;
+    }
+
+    .title{
+      font-size: 18px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea{
+      display: block;
+      height: 18px;
+      width: calc(100% - 36px);
+      margin-bottom: 14px;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      font-size: 16px;
+      padding: 18px;
+      outline: none;
+    }
+
+    textarea{
+      height: 173px;
+      resize: vertical;
+    }
+
+    select{
+      display: block;
+      width: 100%;
+      margin-bottom: 14px;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      padding: 18px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjaGV2cm9uLWRvd24iIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jaGV2cm9uLWRvd24gZmEtdy0xNCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjNDI1MjZFIiBkPSJNMjA3LjAyOSAzODEuNDc2TDEyLjY4NiAxODcuMTMyYy05LjM3My05LjM3My05LjM3My0yNC41NjkgMC0zMy45NDFsMjIuNjY3LTIyLjY2N2M5LjM1Ny05LjM1NyAyNC41MjItOS4zNzUgMzMuOTAxLS4wNEwyMjQgMjg0LjUwNWwxNTQuNzQ1LTE1NC4wMjFjOS4zNzktOS4zMzUgMjQuNTQ0LTkuMzE3IDMzLjkwMS4wNGwyMi42NjcgMjIuNjY3YzkuMzczIDkuMzczIDkuMzczIDI0LjU2OSAwIDMzLjk0MUwyNDAuOTcxIDM4MS40NzZjLTkuMzczIDkuMzcyLTI0LjU2OSA5LjM3Mi0zMy45NDIgMHoiPjwvcGF0aD48L3N2Zz4=");
+      background-position: calc(100% - 20px) calc(1em + 2px);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    input[type="color"]{
+      display: block;
+      width: 100%;
+      height: 56px;
+      margin-bottom: 14px;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-label{
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .checkbox-group, .radio-group{
+      margin-bottom: 14px;
+    }
+
+    .checkbox-group .checkbox, .radio-group .radio{
+      margin-bottom: 7px;
+    }
+
+    .file-upload{
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 18px;
+    }
+
+    .file-upload-select{
+      position: relative;
+      display: block;
+      height: 18px;
+      width: calc(100% - 36px);
+      border: 1px solid #707070;
+      border-radius: 10px;
+      font-size: 16px;
+      padding: 18px;
+      margin-bottom: 24px;
+      outline: none;
+    }
+
+    .file-upload-select .error-message{
+      margin-top: 24px;
+      margin-left: -18px;
+    }
+
+    .file-select-button{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 54px;
+      height: 54px;
+      background: #356bb4;
+      color: #FFF;
+      display: block;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .file-select-button img{
+      height: 19px;
+      filter: invert(1);
+      padding: 19px;
+    }
+
+    .file-upload .file-upload-select input[type="file"] {
+      display: none;
+    }
+
+    .button, input[type="submit"] {
+      background-color: #1F6BB4;
+      color: #FFF;
+      font-weight: bold;
+      line-height: 53px;
+      border: 0px;
+      min-height: 40px;
+      height: auto;
+      outline: none;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:focus, input[type="submit"]:focus {
+      outline: none !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+
+    .cta{
+      width: 50%;
+      margin: 22px auto;
+    }
+
+    .error-message{
+      color: #FF0000;
+      margin-top: -7px;
+      margin-bottom: 14px;
+      display: block;
+    }
+  </style>
+
+  <script>
+    var resize = function(){
+      var body = document.querySelector("body,html");
+      parent.postMessage({ resize: { height: body.clientHeight + 55 } }, '*');
+    };
+
+    let fileInput = document.querySelector("input[type='file']");
+    let fileSelect = document.getElementsByClassName("file-upload-select")[0];
+    let formSubmitted = false;
+
+    if (fileSelect){
+      fileSelect.onclick = function() {
+        fileInput.click();
+      }
+    }
+
+    if (fileInput){
+      fileInput.onchange = function() {
+        let filename = fileInput.files[0].name;
+        let selectName = document.getElementsByClassName("file-select-name")[0];
+        selectName.innerText = filename;
+      }
+    }
+
+    const validation = input => {
+      let errorMessage = input.nextElementSibling?.classList.contains('error-message') ? input.nextElementSibling : false;
+
+      if (input.validity.valueMissing) {
+        !errorMessage && input.insertAdjacentHTML('afterend', '<small class="error-message" data-type="required">È obbligatorio compilare il campo</small>')
+      } else if (!input.checkValidity() && !input.validity.valueMissing) {
+        if (errorMessage && errorMessage.getAttribute('data-type') === 'required') {
+          errorMessage.remove();
+          errorMessage = false;
+        }
+        !errorMessage && input.insertAdjacentHTML('afterend', '<small class="error-message" data-type="invalid">Il valore inserito non è corretto</small>')
+      } else {
+        errorMessage && errorMessage.remove()
+        errorMessage = false;
+      }
+    }
+
+    const validateCheckboxes = group => {
+      let validated = true;
+      let errorMessage = group.nextElementSibling?.classList.contains('error-message') ? group.nextElementSibling : false;
+      let checkboxes = [...group.getElementsByTagName("input")].filter(e =>  e.getAttribute("type") === 'checkbox')
+
+      checkboxes.forEach(c => {
+        if(c.hasAttribute('required') && !c.checked) validated = false
+
+        if (!formSubmitted) {
+          c.addEventListener("change", () => validateCheckboxes(group))
+        } 
+      })
+
+      if(!validated) {
+        !errorMessage && group.insertAdjacentHTML('afterend', '<small class="error-message" data-type="required">È obbligatorio compilare il campo</small>')
+      } else {
+        errorMessage && errorMessage.remove()
+      }
+    }
+
+    const validateForm = () => {
+      let checkboxGroups = [...document.getElementsByClassName("checkbox-group")]
+
+      let inputFields = [
+        ...document.getElementsByTagName("input"),
+        ...document.getElementsByTagName("textarea"),
+        ...document.getElementsByTagName("select")
+      ];
+
+      inputFields = inputFields.filter(e =>  e.getAttribute("type") !== 'radio' && e.getAttribute("type") !== 'checkbox');
+
+      inputFields.forEach(input => {
+        validation(input)
+        if (!formSubmitted) {
+          input.addEventListener("keyup", () => validation(input))
+          input.addEventListener("change", () => validation(input))
+        }
+      })
+
+      checkboxGroups.forEach(group => {
+        validateCheckboxes(group)
+      })
+
+      formSubmitted = true;
+    }
+
+    var sendDataViaClient = function(){
+      var form = document.getElementById('client');
+      var data = { webview: true, data: serialize(form) };
+      //console.log("SENDING DATA FROM WEBVIEW:", data);
+      form.checkValidity() ? parent.postMessage(data, '*') : validateForm()
+    };
+  </script>
+</head>
+
+<body onload="resize()">
+  <div class="container">
+    <div class="header">
+      <div class="title"><%= it.formTitle %></div>
+    </div>
+
+    <form id="client">
+      <div><input type="text" placeholder="Nome Utente" class="txtBox formElement"></div>
+      <div><input type="text" placeholder="Codice MFA" class="txtBox formElement"></div>
+      <div>
+        <select class="formElement">
+          <option>Qual'è il nome del tuo primo animale da compagnia?</option>
+          <option>Qual'è il nome della scuola elementare che hai frequentato?</option>
+          <option>Qual'è il cognome di tua madre da nubile?</option>
+          <option>Dov'è nato tuo padre?</option>
+          <option>Qual'è la tua squadra del cuore?</option>
+        </select>
+        <input type="text" class="txtBox formElement">
+      </div>
+      <div><input type="password" placeholder="Inserisci una nuova password" class="txtBox formElement"></div>
+      <div><input type="password" placeholder="Ripeti la password per sicurezza" class="txtBox formElement"></div>
+
+      <div class="cta">
+        <input type="submit" class="button" name="invia" value="Invia" onclick="sendDataViaClient();" />
+      </div>
+    </form>
+  </div>
+
+  <script>
+  function serialize(form) {
+    if (!form || form.nodeName !== "FORM") {
+      return;
+    }
+    var i, j;
+    var o = {};
+    for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+      if (form.elements[i].name === "") {
+        continue;
+      }
+      switch (form.elements[i].nodeName) {
+      case 'INPUT':
+        switch (form.elements[i].type) {
+        case 'text':
+        case 'email':
+        case 'hidden':
+        case 'password':
+        case 'date':
+        case 'datetime-local':
+          if (typeof form.elements[i].value !== 'undefined' && form.elements[i].value !== ''){
+            o[form.elements[i].name] = form.elements[i].value;
+          }
+          break;
+        case 'button':
+        case 'reset':
+        case 'submit':
+          break;
+        case 'checkbox':
+          if (form.elements[i].checked) {
+            if (o[form.elements[i].name]) {
+              o[form.elements[i].name].push({ id: form.elements[i].value });
+            } else {
+              o[form.elements[i].name] = [{ id: form.elements[i].value }];
+            }
+          }
+          break;
+        case 'radio':
+          if (form.elements[i].checked) {
+            o[form.elements[i].name] = { id: form.elements[i].value };
+          }
+          break;
+        case 'file':
+          o[form.elements[i].name] = form.elements[i].files[0];
+          break;
+        }
+        break;
+      case 'TEXTAREA':
+        o[form.elements[i].name] = form.elements[i].value;
+        break;
+      case 'SELECT':
+        switch (form.elements[i].type) {
+        case 'select-one':
+          o[form.elements[i].name] = { id: form.elements[i].value };
+          break;
+        case 'select-multiple':
+          break;
+        }
+        break;
+      case 'BUTTON':
+        switch (form.elements[i].type) {
+        case 'reset':
+        case 'submit':
+          break;
+        case 'button':
+          o[form.elements[i].name] = form.elements[i].value;
+          break;
+        }
+        break;
+      }
+    }
+    return o;
+  };
+  </script>
+</body>
+</html>
