@@ -211,7 +211,8 @@
       margin: 22px auto;
     }
 
-    .error-message {
+    .error-message,
+    .error-pwd {
       color: #FF0000;
       margin-top: -7px;
       margin-bottom: 14px;
@@ -260,20 +261,20 @@
       }
     }
 
-    const validateForm = () => {
-      let inputFields = [...document.getElementsByClassName('formElement')];
-
+    const validateForm = (inputFields = [], pwd, pwd2) => {
       inputFields = inputFields.filter(e => e.getAttribute("type") !== 'radio' && e.getAttribute("type") !== 'checkbox');
 
       inputFields.forEach(input => {
         validation(input)
         if (!formSubmitted) {
-          input.addEventListener("keyup", () => validation(input))
-          input.addEventListener("change", () => validation(input))
+          input.addEventListener("keyup", () => validation(input));
+          input.addEventListener("change", () => validation(input));
         }
       })
 
-      console.log(inputFields)
+      if (pwd.value !== pwd2.value) {
+        pwd2.insertAdjacentHTML('afterend', '<small class="error-pwd" data-type="invalid">Attenzione! Le password non corrispondono.</small>')
+      }
 
       formSubmitted = true;
     }
@@ -281,8 +282,12 @@
     var sendDataViaClient = function () {
       var form = document.getElementById('client');
       var data = { webview: true, data: serialize(form) };
-      //console.log("SENDING DATA FROM WEBVIEW:", data);
-      form.checkValidity() ? parent.postMessage(data, '*') : validateForm()
+      var inputFields = [...document.getElementsByClassName('formElement')];
+      var pwd = inputFields.find(input => input.name === 'password');
+      var pwd2 = inputFields.find(input => input.name === 'password2');
+      var pwdError = document.getElementsByClassName('error-pwd')[0];
+      if (pwdError) pwdError.remove();
+      form.checkValidity() && pwd.value === pwd2.value ? parent.postMessage(data, '*') : validateForm(inputFields, pwd, pwd2)
     };
   </script>
 </head>
