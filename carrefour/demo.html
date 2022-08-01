@@ -3,15 +3,79 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Carrefour JSM Digital Assistant - Demo</title>
   <style>
     #res_chatbot_62e2b6f1e64cfa7e6bd5eaa7 {
       box-shadow: none !important;
     }
+
+    #res_chatbot_62e76e88f4208731ed94c2c2 {
+      bottom: calc(70vh - 410px);
+    }
+
+    /* PAGE HEADER */
+
+    header {
+      height: 42px;
+      width: 99%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .img-wrap {
+      height: 100%;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 10%;
+    }
+
+    .fake-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      border-radius: 20px;
+      height: 20px;
+      line-height: 20px;
+      width: 80px;
+      padding: 8px;
+    }
+
+    /* BOT */
+
+    .initial-message {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 50vh;
+    }
   </style>
 </head>
 
 <body style="background-color:#deebff;">
+  <header>
+    <img class="img-wrap" src="logo.png" alt="logo">
+
+    <div class="header-left">
+      <div class="fake-button">Richieste</div>
+      <i class="fa fa-pencil"></i>
+      <div>
+        <i class="fa fa-user"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="initial-message">Descrivi brevemente il tuo problema o la tua richiesta</div>
+
   <div id="responsa_chatbot_container"
     style="position: absolute; width: 800px; margin-left: -400px; bottom: 30px; left: 50%;">
     <script name="responsa-js" class="responsa-js">
