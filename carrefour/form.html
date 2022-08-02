@@ -58,7 +58,7 @@
       background-color: #eee;
       position: absolute;
       border-radius: 0 0 5px 5px;
-      bottom: 20px;
+      bottom: 18px;
       width: 103.2%;
     }
 
@@ -66,7 +66,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 10px;
       height: 12px;
-      margin-top: 10px;
+      margin-top: 6px;
       color: red;
     }
 
@@ -221,9 +221,13 @@
           let name = event.target.getAttribute('name');
           inputValidator[name] = event.target.value
 
-          let allTrue = Object.keys(inputValidator).every((item) => {
-            return inputValidator[item]
-          }) && inputValidator["password"] === inputValidator["password2"];
+          let validatedItems = Object.keys(inputValidator).reduce((array, item) => {
+            if (item === 'question' && inputValidator[item].length > 2) array.push(item);
+            if (inputValidator[item].length > 7) array.push(item);
+            return array;
+          }, []);
+
+          let allTrue = validatedItems.length === 5 && inputValidator["password"] === inputValidator["password2"];
 
           if (allTrue) {
             buttonSend.disabled = false;
