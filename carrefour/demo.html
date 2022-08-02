@@ -6,8 +6,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/material.css" />
   <title>Carrefour JSM Digital Assistant - Demo</title>
   <style>
+    * {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
     /* PAGE HEADER */
 
     header {
@@ -50,6 +56,19 @@
       text-align: center;
       margin: 80px 0 40px;
     }
+
+    footer {
+      position: fixed;
+      height: auto;
+      width: 100%;
+      top: calc(100vh - 30px);
+      left: 0px;
+      right: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      color: #010101;
+    }
   </style>
 </head>
 
@@ -58,15 +77,14 @@
     <img class="logo" src="logo.png" alt="logo">
 
     <div class="header-left">
-      <div class="fake-button">Richieste</div>
-      <i class="fa fa-pencil"></i>
-      <div>
+      <div class="fake-button" data-tippy-content="Non implementato per questa demo">Richieste</div>
+      <i class="fa fa-pencil" data-tippy-content="Non implementato per questa demo"></i>
+      <div data-tippy-content="Non implementato per questa demo">
         <i class="fa fa-user"></i>
       </div>
     </div>
   </header>
-
-  <div class="initial-message">Descrivi brevemente il tuo problema o la tua richiesta</div>
+  <div class="initial-message">Scrivi in modo sintetico il tuo problema o la tua richiesta</div>
 
   <div id="responsa_chatbot_container" style="position: absolute; width: 800px; margin-left: -400px; left: 50%;">
     <script name="responsa-js" class="responsa-js">
@@ -92,6 +110,14 @@
         "https://chatbots.goresponsa.com/chatbot/62e76e88f4208731ed94c2c2.js");
     </script>
   </div>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    tippy('[data-tippy-content]', { theme: 'material' });
+  </script>
+  <footer>
+    For demo purposes only
+  </footer>
 </body>
 
 </html>
