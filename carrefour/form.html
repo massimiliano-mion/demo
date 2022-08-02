@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
 
 <head>
@@ -20,8 +20,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      height: 450px;
-      width: 500px;
+      height: 420px;
+      width: 700px;
       padding: 10px;
     }
 
@@ -46,7 +46,7 @@
 
     .formFirstElement {
       border-radius: 5px 5px 0 0;
-      width: 104.5%;
+      width: 103.2%;
     }
 
     .formLastElement {
@@ -59,7 +59,7 @@
       position: absolute;
       border-radius: 0 0 5px 5px;
       bottom: 20px;
-      width: 104.5%;
+      width: 103.2%;
     }
 
     .errorMessage {
@@ -97,8 +97,7 @@
           <div class="errorMessage" id="userNameMessage"></div>
         </div>
         <div class="input-wrapper">
-          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement"
-            maxlength="10" />
+          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" />
           <div class="customMeter" id="MFACodeMeter"></div>
           <div class="errorMessage" id="MFACodeMessage"></div>
         </div>
@@ -118,13 +117,13 @@
         </div>
         <div class="input-wrapper">
           <input type="password" name="password" id="pwd" placeholder="Inserisci una nuova password"
-            class="txtBox formElement" minlength="8" maxlength="16" />
+            class="txtBox formElement" minlength="8" />
           <div class="customMeter" id="pwdMeter"></div>
           <div class="errorMessage" id="pwdMessage"></div>
         </div>
         <div class="input-wrapper">
           <input type="password" name="password2" id="repeatPwd" placeholder="Ripeti la password per sicurezza"
-            class="txtBox formElement" minlength="8" maxlength="16" />
+            class="txtBox formElement" minlength="8" />
           <div class="customMeter" id="repeatPwdMeter"></div>
           <div class="errorMessage" id="repeatPwdMessage"></div>
         </div>
