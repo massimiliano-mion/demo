@@ -92,17 +92,19 @@
     <form id="client" onsubmit="sendDataViaClient(event);">
       <div class="formContainer">
         <div class="input-wrapper">
-          <input type="text" name="name" placeholder="Nome Utente" class="txtBox formElement" id="userName" />
+          <input type="text" name="name" placeholder="Nome Utente" class="txtBox formElement" id="userName"
+            minlength="8" required />
           <div class="customMeter" id="userNameMeter"></div>
           <div class="errorMessage" id="userNameMessage"></div>
         </div>
         <div class="input-wrapper">
-          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" />
+          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" minlength="8"
+            required />
           <div class="customMeter" id="MFACodeMeter"></div>
           <div class="errorMessage" id="MFACodeMessage"></div>
         </div>
         <div class="input-wrapper">
-          <select class="formElement formFirstElement">
+          <select class="formElement formFirstElement" type="select-one" name="question">
             <option>Qual'è il nome del tuo primo animale da compagnia?</option>
             <option>Qual'è il nome della scuola elementare che hai frequentato?</option>
             <option>Qual'è il cognome di tua madre da nubile?</option>
@@ -110,24 +112,25 @@
             <option>Qual'è la tua squadra del cuore?</option>
           </select>
           <div class="input-wrapper">
-            <input type="text" name="question" id="answer" class="txtBox formElement formLastElement" />
+            <input type="text" name="answer" id="answer" class="txtBox formElement formLastElement" minlength="3"
+              required />
             <div class="customMeter" id="answerMeter"></div>
             <div class="errorMessage" id="answerMessage"></div>
           </div>
         </div>
         <div class="input-wrapper">
           <input type="password" name="password" id="pwd" placeholder="Inserisci una nuova password"
-            class="txtBox formElement" minlength="8" />
+            class="txtBox formElement" minlength="8" required />
           <div class="customMeter" id="pwdMeter"></div>
           <div class="errorMessage" id="pwdMessage"></div>
         </div>
         <div class="input-wrapper">
           <input type="password" name="password2" id="repeatPwd" placeholder="Ripeti la password per sicurezza"
-            class="txtBox formElement" minlength="8" />
+            class="txtBox formElement" minlength="8" required />
           <div class="customMeter" id="repeatPwdMeter"></div>
           <div class="errorMessage" id="repeatPwdMessage"></div>
         </div>
-        <button id="btnInvia" type="submit" disabled>Invia</button>
+        <button id="btnInvia" type="submit">Invia</button>
       </div>
     </form>
   </div>
@@ -205,38 +208,6 @@
       }
       return o;
     };
-
-    (function () {
-      let inputValidator = {
-        "name": "",
-        "mfa": "",
-        "question": "",
-        "password": "",
-        "password2": ""
-      }
-      var buttonSend = document.getElementById('btnInvia');
-      var inputFields = [...document.getElementsByClassName('formElement')];
-      inputFields.forEach((input, i) => {
-        input.addEventListener('input', () => {
-          let name = event.target.getAttribute('name');
-          inputValidator[name] = event.target.value
-
-          let validatedItems = Object.keys(inputValidator).reduce((array, item) => {
-            if (item === 'question' && inputValidator[item].length > 2) array.push(item);
-            if (inputValidator[item].length > 7) array.push(item);
-            return array;
-          }, []);
-
-          let allTrue = validatedItems.length === 5 && inputValidator["password"] === inputValidator["password2"];
-
-          if (allTrue) {
-            buttonSend.disabled = false;
-          } else {
-            buttonSend.disabled = true;
-          }
-        })
-      });
-    })();
 
     function addValidation(outerParamObj) {
       handler =
@@ -351,12 +322,12 @@
       }
     );
 
-
     var sendDataViaClient = function (event) {
       event.preventDefault();
       var form = document.getElementById('client');
       var serializedForm = serialize(form);
-      if (!Object.values(serializedForm).length) return;
+      if (Object.values(serializedForm).length < 6) return;
+      console.log(serializedForm);
       var data = { webview: true, data: serializedForm };
       parent.postMessage(data, '*')
     };
