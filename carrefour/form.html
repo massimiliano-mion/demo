@@ -208,26 +208,22 @@
 
     (function () {
       let inputValidator = {
-        "name": false,
-        "mfa": false,
-        "question": false,
-        "password": false,
-        "password2": false
+        "name": "",
+        "mfa": "",
+        "question": "",
+        "password": "",
+        "password2": ""
       }
       var buttonSend = document.getElementById('btnInvia');
       var inputFields = [...document.getElementsByClassName('formElement')];
-      inputFields.forEach((input) => {
+      inputFields.forEach((input, i) => {
         input.addEventListener('input', () => {
           let name = event.target.getAttribute('name');
-          if (event.target.value.length > 0) {
-            inputValidator[name] = true;
-          } else {
-            inputValidator[name] = false;
-          };
+          inputValidator[name] = event.target.value
 
           let allTrue = Object.keys(inputValidator).every((item) => {
-            return inputValidator[item] === true
-          });
+            return inputValidator[item]
+          }) && inputValidator["password"] === inputValidator["password2"];
 
           if (allTrue) {
             buttonSend.disabled = false;
@@ -358,7 +354,6 @@
       var serializedForm = serialize(form);
       if (!Object.values(serializedForm).length) return;
       var data = { webview: true, data: serializedForm };
-      console.log(data);
       parent.postMessage(data, '*')
     };
   </script>
