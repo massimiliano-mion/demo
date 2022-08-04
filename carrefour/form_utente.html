@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 420px;
+      width: 700px;
+      padding: 10px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .formElement {
+      border-radius: 5px;
+      width: 100%;
+      border: 1px solid #eee;
+      padding: 10px;
+      background-color: #fafafa;
+      font-size: 16px;
+    }
+
+    .formElement:focus-visible {
+      outline: 0;
+      background-color: #fff;
+    }
+
+    .formFirstElement {
+      border-radius: 5px 5px 0 0;
+      width: 103.2%;
+    }
+
+    .formLastElement {
+      border-radius: 0 0 5px 5px;
+    }
+
+    .customMeter {
+      height: 6px;
+      background-color: #eee;
+      position: absolute;
+      border-radius: 0 0 5px 5px;
+      bottom: 18px;
+      width: 103.2%;
+    }
+
+    .errorMessage {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 10px;
+      height: 12px;
+      margin-top: 6px;
+      color: red;
+    }
+
+    #btnInvia {
+      height: 36px;
+      width: 120px;
+      border: none;
+      border-radius: 8px;
+      background-color: #deebff;
+    }
+  </style>
+
+  <script>
+    var resize = function () {
+      var body = document.querySelector("body,html");
+      parent.postMessage({ resize: { height: body.clientHeight + 55 } }, '*');
+    };
+  </script>
+</head>
+
+<body onload="resize()">
+  <div class="container">
+    <form id="client" onsubmit="sendDataViaClient(event);">
+      <div class="formContainer">
+        <div class="input-wrapper">
+          <input type="text" name="name" placeholder="corrado.scordia" value="corrado.scordia" class="txtBox formElement" id="userName" minlength="8" readonly disabled />
+        </div>
+        <div class="input-wrapper">
+          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" minlength="8"
+            required />
+          <div class="customMeter" id="MFACodeMeter"></div>
+          <div class="errorMessage" id="MFACodeMessage"></div>
+        </div>
+        <div class="input-wrapper">
+          <select class="formElement formFirstElement" type="select-one" name="question">
+            <option>Qual'è il nome del tuo primo animale da compagnia?</option>
+            <option>Qual'è il nome della scuola elementare che hai frequentato?</option>
+            <option>Qual'è il cognome di tua madre da nubile?</option>
+            <option>Dov'è nato tuo padre?</option>
+            <option>Qual'è la tua squadra del cuore?</option>
+          </select>
+          <div class="input-wrapper">
+            <input type="text" name="answer" id="answer" class="txtBox formElement formLastElement" minlength="3"
+              required />
+            <div class="customMeter" id="answerMeter"></div>
+            <div class="errorMessage" id="answerMessage"></div>
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="password" id="pwd" placeholder="Inserisci una nuova password"
+            class="txtBox formElement" minlength="8" required />
+          <div class="customMeter" id="pwdMeter"></div>
+          <div class="errorMessage" id="pwdMessage"></div>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="password2" id="repeatPwd" placeholder="Ripeti la password per sicurezza"
+            class="txtBox formElement" minlength="8" required />
+          <div class="customMeter" id="repeatPwdMeter"></div>
+          <div class="errorMessage" id="repeatPwdMessage"></div>
+        </div>
+        <button id="btnInvia" type="submit">Invia</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function serialize(form) {
+      if (!form || form.nodeName !== "FORM") {
+        return;
+      }
+      var i, j;
+      var o = {};
+      for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+        if (form.elements[i].name === "") {
+          continue;
+        }
+        switch (form.elements[i].nodeName) {
+          case 'INPUT':
+            switch (form.elements[i].type) {
+              case 'text':
+              case 'email':
+              case 'hidden':
+              case 'password':
+              case 'date':
+              case 'datetime-local':
+                if (typeof form.elements[i].value !== 'undefined' && form.elements[i].value !== '') {
+                  o[form.elements[i].name] = form.elements[i].value;
+                }
+                break;
+              case 'button':
+              case 'reset':
+              case 'submit':
+                break;
+              case 'checkbox':
+                if (form.elements[i].checked) {
+                  if (o[form.elements[i].name]) {
+                    o[form.elements[i].name].push({ id: form.elements[i].value });
+                  } else {
+                    o[form.elements[i].name] = [{ id: form.elements[i].value }];
+                  }
+                }
+                break;
+              case 'radio':
+                if (form.elements[i].checked) {
+                  o[form.elements[i].name] = { id: form.elements[i].value };
+                }
+                break;
+              case 'file':
+                o[form.elements[i].name] = form.elements[i].files[0];
+                break;
+            }
+            break;
+          case 'TEXTAREA':
+            o[form.elements[i].name] = form.elements[i].value;
+            break;
+          case 'SELECT':
+            switch (form.elements[i].type) {
+              case 'select-one':
+                o[form.elements[i].name] = { id: form.elements[i].value };
+                break;
+              case 'select-multiple':
+                break;
+            }
+            break;
+          case 'BUTTON':
+            switch (form.elements[i].type) {
+              case 'reset':
+              case 'submit':
+                break;
+              case 'button':
+                o[form.elements[i].name] = form.elements[i].value;
+                break;
+            }
+            break;
+        }
+      }
+      return o;
+    };
+
+    function addValidation(outerParamObj) {
+      handler =
+        function (paramObj) {
+          return function () {
+            paramObj.meter.style.backgroundColor = paramObj.results[paramObj.test()].color;
+            paramObj.message.innerHTML = paramObj.results[paramObj.test()].message;
+          }
+        }(outerParamObj);
+
+      outerParamObj.meter = document.getElementById(outerParamObj.meterId);
+      outerParamObj.message = document.getElementById(outerParamObj.messageId);
+      outerParamObj.elements = new Array(outerParamObj.elementsId.length);
+      for (i = 0; i < outerParamObj.elementsId.length; i++) {
+        outerParamObj.elements[i] = document.getElementById(outerParamObj.elementsId[i]);
+        outerParamObj.elements[i]?.addEventListener('keyup', handler);
+      }
+
+    }
+
+    addValidation(
+      {
+        elementsId: ['userName'],
+        meterId: 'userNameMeter',
+        messageId: 'userNameMessage',
+        results: [
+          { color: '#eee', message: '' },
+          { color: 'red', message: 'Nome Utente troppo corto (min 8 caratteri)' },
+          { color: 'green', message: '' },
+        ],
+        test: function () {
+          if (this.elements[0].value == '') return 0;
+          else if (this.elements[0].value.length >= 8) return 2;
+          else return 1;
+        }
+      }
+    );
+
+    addValidation(
+      {
+        elementsId: ['MFACode'],
+        meterId: 'MFACodeMeter',
+        messageId: 'MFACodeMessage',
+        results: [
+          { color: '#eee', message: '' },
+          { color: 'red', message: 'Codice MFA troppo corto (min 8 caratteri)' },
+          { color: 'green', message: '' },
+        ],
+        test: function () {
+          if (this.elements[0].value == '') return 0;
+          else if (this.elements[0].value.length >= 8) return 2;
+          else return 1;
+        }
+      }
+    );
+
+    addValidation(
+      {
+        elementsId: ['answer'],
+        meterId: 'answerMeter',
+        messageId: 'answerMessage',
+        results: [
+          { color: '#eee', message: '' },
+          { color: 'red', message: 'Risposta troppo corta (min 3 caratteri)' },
+          { color: 'green', message: '' },
+        ],
+        test: function () {
+          if (this.elements[0].value == '') return 0;
+          else if (this.elements[0].value.length >= 3) return 2;
+          else return 1;
+        }
+      }
+    );
+
+    addValidation(
+      {
+        elementsId: ['repeatPwd', 'pwd'],
+        meterId: 'repeatPwdMeter',
+        messageId: 'repeatPwdMessage',
+        results: [
+          { color: '#eee', message: '' },
+          { color: 'red', message: 'Le password non corrispondono' },
+          { color: 'green', message: '' },
+        ],
+        test: function () {
+          if (this.elements[0].value == '') return 0;
+          else if (this.elements[0].value == this.elements[1].value) return 2;
+          else return 1;
+        }
+      }
+    );
+
+    addValidation(
+      {
+        elementsId: ['pwd'],
+        meterId: 'pwdMeter',
+        messageId: 'pwdMessage',
+        results: [
+          { color: '#eee', message: '' },
+          { color: 'red', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
+          { color: 'orange', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
+          { color: 'yellow', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
+          { color: 'green', message: '' },
+        ],
+        test: function () {
+          if (this.elements[0].value == '') return 0;
+          else return (/[a-z]/.test(this.elements[0].value) ? 1 : 0)
+            + (/[A-Z]/.test(this.elements[0].value) ? 1 : 0)
+            + (/[0-9]/.test(this.elements[0].value) ? 1 : 0)
+            + (this.elements[0].value.length >= 8 ? 1 : 0);
+        }
+      }
+    );
+
+    var sendDataViaClient = function (event) {
+      event.preventDefault();
+      var form = document.getElementById('client');
+      var serializedForm = serialize(form);
+      if (Object.values(serializedForm).length < 6) return;
+      // console.log(serializedForm);
+      var data = { webview: true, data: serializedForm };
+      parent.postMessage(data, '*')
+    };
+  </script>
+</body>
+
+</html>
