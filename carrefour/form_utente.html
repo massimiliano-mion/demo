@@ -92,13 +92,8 @@
     <form id="client" onsubmit="sendDataViaClient(event);">
       <div class="formContainer">
         <div class="input-wrapper">
-          <input type="text" name="name" placeholder="corrado.scordia" value="corrado.scordia" class="txtBox formElement" id="userName" minlength="8" readonly disabled />
-        </div>
-        <div class="input-wrapper">
-          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" minlength="8"
-            required />
-          <div class="customMeter" id="MFACodeMeter"></div>
-          <div class="errorMessage" id="MFACodeMessage"></div>
+          <input type="text" name="name" placeholder="corrado.scordia" value="corrado.scordia"
+            class="txtBox formElement" id="userName" minlength="8" readonly disabled />
         </div>
         <div class="input-wrapper">
           <select class="formElement formFirstElement" type="select-one" name="question">
@@ -126,6 +121,12 @@
             class="txtBox formElement" minlength="8" required />
           <div class="customMeter" id="repeatPwdMeter"></div>
           <div class="errorMessage" id="repeatPwdMessage"></div>
+        </div>
+        <div class="input-wrapper">
+          <input type="text" name="mfa" placeholder="Codice MFA" id="MFACode" class="txtBox formElement" minlength="8"
+            required />
+          <div class="customMeter" id="MFACodeMeter"></div>
+          <div class="errorMessage" id="MFACodeMessage"></div>
         </div>
         <button id="btnInvia" type="submit">Invia</button>
       </div>
