@@ -15,12 +15,13 @@
 <script>
     var urlParams = new URLSearchParams(window.location.search);
     var customerCode = urlParams.get('code');
+    var origin = urlParams.get('origin');
 
     if (typeof lhc_var === 'undefined') {
       window.lhc_var = {};
     };
-    lhc_var.customerCode = customerCode;
-    lhc_var.origin = 'ilmioleasing';
+    lhc_var.customerCode = customerCode || '';
+    lhc_var.origin = origin || 'ilmioleasing';
 
     var LHC_API = LHC_API || {};
     LHC_API.args = {
