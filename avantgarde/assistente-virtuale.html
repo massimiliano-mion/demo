@@ -9,7 +9,9 @@
 <div id="responsa_chatbot_container" style="display: flex; align-items: center; justify-content: center;">
 <script name="responsa-js" class="responsa-js">
   (function(q,u,e,s,t,i,o,n) {
-    params = {}
+    var params = {
+      meta: {}
+    }
     
     if (!('ontouchstart' in window) && !(navigator.maxTouchPoints > 0) || ((navigator.maxTouchPoints > 0 || 'ontouchstart' in window || 'onmsgesturechange' in window) && window.innerWidth > 1024)){
       params = {
@@ -19,7 +21,8 @@
         iframe_width: 800
       }
     }
-params.meta.kb_dynamic_link = 'https://www.responsa.ai';
+    
+    params.meta.kb_dynamic_link = 'https://www.responsa.ai';
       
     q[t]=q[t]||{},q[t]['616d29b1f420877d12730b41']=params;
     o=u.getElementsByTagName(e)[0];
