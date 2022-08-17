@@ -14,12 +14,10 @@
     }
     
     if (!('ontouchstart' in window) && !(navigator.maxTouchPoints > 0) || ((navigator.maxTouchPoints > 0 || 'ontouchstart' in window || 'onmsgesturechange' in window) && window.innerWidth > 1024)){
-      params = {
-        chatbot_position: 'relative',
-        auto_engage: true,
-        iframe_height: 600,
-        iframe_width: 800
-      }
+      params.chatbot_position = 'relative';
+        params.auto_engage = true;
+        params.iframe_height = 600;
+        params.iframe_width = 800;
     }
     
     params.meta.kb_dynamic_link = 'https://www.responsa.ai';
