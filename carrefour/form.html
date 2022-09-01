@@ -92,7 +92,7 @@
     <form id="client" onsubmit="sendDataViaClient(event);">
       <div class="formContainer">
         <div class="input-wrapper">
-          <input type="text" name="name" placeholder="Nome Utente" class="txtBox formElement" id="userName"
+          <input type="text" name="name" placeholder="Inserisci l'utenza (nome_cognome)" class="txtBox formElement" id="userName"
             minlength="8" required />
           <div class="customMeter" id="userNameMeter"></div>
           <div class="errorMessage" id="userNameMessage"></div>
@@ -258,7 +258,7 @@
         ],
         test: function () {
           if (this.elements[0].value == '') return 0;
-          else if (this.elements[0].value.length >= 8) return 2;
+          else if (this.elements[0].value.length >= 6) return 2;
           else return 1;
         }
       }
@@ -307,16 +307,18 @@
         messageId: 'pwdMessage',
         results: [
           { color: '#eee', message: '' },
-          { color: 'red', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
-          { color: 'orange', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
-          { color: 'yellow', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.' },
+          { color: 'red', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola, un carattere speciale e un numero.' },
+          { color: 'orange', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola, un carattere speciale e un numero.' },
+          { color: 'yellow', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola, un carattere speciale e un numero.' },
+          { color: '#AFA', message: 'La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola, un carattere speciale e un numero.' },
           { color: 'green', message: '' },
         ],
         test: function () {
           if (this.elements[0].value == '') return 0;
           else return (/[a-z]/.test(this.elements[0].value) ? 1 : 0)
             + (/[A-Z]/.test(this.elements[0].value) ? 1 : 0)
-            + (/[0-9]/.test(this.elements[0].value) ? 1 : 0)
+            + (/[0-9]/.test(this.elements[0].value) ? 1 : 0)     
+            + (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.elements[0].value) ? 1 : 0)
             + (this.elements[0].value.length >= 8 ? 1 : 0);
         }
       }
